@@ -1,11 +1,11 @@
-// Styles
-import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
-
-// Composables
+import '@mdi/font/css/materialdesignicons.css'
+import { mdi } from 'vuetify/iconsets/mdi-svg'
 import { createVuetify } from 'vuetify'
 
-// https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({
-  theme: {},
+  icons: {
+    defaultSet: 'mdi',
+    sets: { mdi },
+  },
 })
