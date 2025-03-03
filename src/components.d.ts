@@ -8,8 +8,10 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppLogo: typeof import('./components/Layouts/AppLogo.vue')['default']
+    LargeBlogCard: typeof import('./components/Blog/LargeBlogCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SmallBlogCard: typeof import('./components/Blog/SmallBlogCard.vue')['default']
     TheAppBar: typeof import('./components/Layouts/TheAppBar.vue')['default']
     TheAppFooter: typeof import('./components/Layouts/TheAppFooter.vue')['default']
     TheFooter: typeof import('./components/Layouts/TheFooter.vue')['default']

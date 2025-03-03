@@ -2,20 +2,36 @@
   <v-app-bar
     app
     dark
-    hide-on-scroll
+    scroll-behavior="elevate"
     color="grey-darken-4"
   >
     <v-app-bar-title>
-      <AppLogo />
+      <router-link
+        to="/"
+        class="text-decoration-none"
+      >
+        <AppLogo />
+      </router-link>
     </v-app-bar-title>
 
     <template #append>
-      <v-tooltip location="top">
+      <v-btn
+        class="mx-5"
+        color="white"
+        to="/create"
+      >
+        <v-icon>{{ mdiPlus }}</v-icon>
+        Create
+      </v-btn>
+
+      <v-tooltip
+        location="top"
+      >
         <template #activator="{ props }">
           <v-btn
             :icon="themeIcon"
             v-bind="props"
-            class="mr-3"
+            class="mr-10"
             density="compact"
             @click="toggleTheme"
           />
@@ -31,12 +47,11 @@
 
 <script lang="ts" setup>
 import { useTheme } from 'vuetify'
-import {  mdiMoonWaningCrescent, mdiWhiteBalanceSunny } from '@mdi/js';
+import { mdiMoonWaningCrescent, mdiWhiteBalanceSunny, mdiPlus } from '@mdi/js';
 
 const theme = useTheme()
 
 const isDarkMode = computed(() => theme.global.name.value === 'dark')
-
 const themeIcon = computed(() => isDarkMode.value ? mdiWhiteBalanceSunny : mdiMoonWaningCrescent )
 
 function toggleTheme () {
