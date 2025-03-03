@@ -6,7 +6,7 @@
     <v-container>
       <div class="d-flex flex-column align-center">
         <div class="text-subtitle-2 mt-3">
-          Made with <span class="text-red text-caption">❤️</span> by Ishan Subedi
+          Made with <span class="text-red text-caption">❤️</span> using Vuetify
         </div>
       </div>
     </v-container>
