@@ -7,6 +7,8 @@
     </v-main>
 
     <TheAppFooter />
+
+    <TheAppSnackbar />
   </v-app>
 </template>
 
