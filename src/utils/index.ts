@@ -1,7 +1,11 @@
-export function formatDate(date: string) {
-  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
-  return new Date(date).toLocaleDateString('en', options);
-}
+export function formatDate(dateString: string) {
+  return new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(dateString));
+};
 
 export function truncateString (str: string, number: number) {
   if (str.length > number) {
