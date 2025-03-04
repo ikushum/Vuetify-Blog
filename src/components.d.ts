@@ -8,12 +8,17 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppLogo: typeof import('./components/Layouts/AppLogo.vue')['default']
+    BlogForm: typeof import('./components/Blog/BlogForm.vue')['default']
+    DeleteBlogDialog: typeof import('./components/Blog/DeleteBlogDialog.vue')['default']
     LargeBlogCard: typeof import('./components/Blog/LargeBlogCard.vue')['default']
+    NoBlogContent: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
+    NoBlogPlaceholder: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SmallBlogCard: typeof import('./components/Blog/SmallBlogCard.vue')['default']
     TheAppBar: typeof import('./components/Layouts/TheAppBar.vue')['default']
     TheAppFooter: typeof import('./components/Layouts/TheAppFooter.vue')['default']
+    TheAppSnackbar: typeof import('./components/Layouts/TheAppSnackbar.vue')['default']
     TheFooter: typeof import('./components/Layouts/TheFooter.vue')['default']
   }
 }
