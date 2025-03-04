@@ -7,19 +7,25 @@
       <v-container>
         <div class="my-5 text-center">
           <h3 class="text-h4 mb-2 font-weight-bold">
-            Post a Blog
+            Update Blog
           </h3>
 
           <p class="text-grey">
-            Please fill the form below to create a new blog post.
+            Please fill the form below to update yout blog.
           </p>
         </div>
 
-        <BlogForm />
+        <BlogForm :default-values="blog" />
       </v-container>
     </v-col>
   </v-row>
 </template>
 
 <script lang="ts" setup>
+import { useBlogStore } from '@/stores/blog'
+
+const route = useRoute<'/blog/[id]/edit'>()
+const blogStore = useBlogStore()
+
+const blog = computed(() => blogStore.getById(route.params.id));
 </script>
