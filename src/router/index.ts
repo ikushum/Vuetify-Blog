@@ -11,6 +11,7 @@ const notFoundRoute = {
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: setupLayouts([...routes, notFoundRoute]),
+  scrollBehavior() { return { top: 0 } },
 })
 
 router.onError((err, to) => {
