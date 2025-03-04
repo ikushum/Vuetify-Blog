@@ -59,7 +59,7 @@
         <v-btn
           size="small"
           color="primary"
-          :to="'/blog'"
+          :to="`/blog/${props.blog.id}`"
         >
           Read More
         </v-btn>
@@ -84,7 +84,7 @@
                   :icon="mdiTrashCanOutline"
                   size="small"
                   variant="text"
-                  color="error"
+                  color="grey-darken-1"
                 />
               </template>
 
@@ -100,7 +100,7 @@
                   :icon="mdiPencilOutline"
                   size="small"
                   variant="text"
-                  color="primary"
+                  color="grey-darken-1"
                 />
               </template>
 
