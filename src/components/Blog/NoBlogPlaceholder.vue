@@ -14,22 +14,40 @@
       </h3>
 
       <p class="text-grey">
-        Start creating blogs by clicking on "Create Blog"
+        Start creating blogs by clicking on "Create New"
       </p>
     </div>
 
     <v-btn
       flat
       color="primary"
-      class="px-10 mb-10"
+      class="px-10 mb-1"
       @click="router.push({ path: '/create' })"
     >
       Create New
     </v-btn>
+
+    <div class="my-2">
+      or
+    </div>
+
+    <v-btn
+      flat
+      variant="text"
+      color="primary"
+      class="px-10"
+      @click="isGenerateBlogDialogOpen = true"
+    >
+      Generate Sample Blogs
+    </v-btn>
+
+    <GenerateBlogDialog v-model="isGenerateBlogDialogOpen" />
   </v-container>
 </template>
 
 <script lang="ts" setup>
 import { mdiFolderOutline } from "@mdi/js";
 
-const router = useRouter();</script>
+const router = useRouter();
+const isGenerateBlogDialogOpen = ref(false)
+</script>

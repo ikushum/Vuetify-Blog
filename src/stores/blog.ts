@@ -10,6 +10,9 @@ export const useBlogStore = defineStore('blog', {
     getById: (state) => (id: string) => state.blogs.find((blog) => blog.id === id),
   },
   actions: {
+    generate () {
+      this.blogs = blogDB.generate()
+    },
     add (blog: BlogPost) {
       this.blogs.unshift(blog)
       blogDB.add(blog)

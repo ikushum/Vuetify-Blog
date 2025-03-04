@@ -10,6 +10,7 @@ declare module 'vue' {
     AppLogo: typeof import('./components/Layouts/AppLogo.vue')['default']
     BlogForm: typeof import('./components/Blog/BlogForm.vue')['default']
     DeleteBlogDialog: typeof import('./components/Blog/DeleteBlogDialog.vue')['default']
+    GenerateBlogDialog: typeof import('./components/Blog/GenerateBlogDialog.vue')['default']
     LargeBlogCard: typeof import('./components/Blog/LargeBlogCard.vue')['default']
     NoBlogContent: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
     NoBlogPlaceholder: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']

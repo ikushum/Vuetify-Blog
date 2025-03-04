@@ -6,8 +6,8 @@
   >
     <v-card
       rounded="lg"
-      title="Confirm Delete"
-      text="Are you sure you want to delete this blog?"
+      title="Please Confirm"
+      text="This will help you get started by generating sample blogs. Are you sure you want to generate?"
     >
       <template #actions>
         <v-spacer />
@@ -17,10 +17,10 @@
         </v-btn>
 
         <v-btn
-          color="error"
-          @click="deleteBlog"
+          color="primary"
+          @click="generateBlogs"
         >
-          Delete
+          Generate
         </v-btn>
       </template>
     </v-card>
@@ -30,24 +30,22 @@
 <script lang="ts" setup>
 import { useBlogStore } from '@/stores/blog'
 import { useSnackbarStore } from '@/stores/snackbar'
-import { type DeleteBlogDialogProps } from "@/interfaces/blog";
 
-const props = defineProps<DeleteBlogDialogProps>();
-const emit = defineEmits(["update:model-value", "success"]);
+const props = defineProps<{ modelValue: boolean }>();
+const emit = defineEmits(["update:model-value"]);
 
 const blogStore = useBlogStore()
 const snackbarStore = useSnackbarStore()
 
-function deleteBlog () {
-  blogStore.delete(props.blog.id)
+function generateBlogs () {
+  blogStore.generate()
 
   snackbarStore.show({
     color: '',
     isOpen: true,
-    message: 'The blog post was deleted.'
+    message: 'Sample blogs have been generated'
   })
 
   emit('update:model-value', false)
-  emit('success')
 }
 </script>
