@@ -2,7 +2,6 @@
   <v-app-bar
     app
     dark
-    scroll-behavior="elevate"
     color="grey-darken-4"
   >
     <v-app-bar-title>
@@ -21,12 +20,10 @@
         to="/create"
       >
         <v-icon>{{ mdiPlus }}</v-icon>
-        Create
+        New
       </v-btn>
 
-      <v-tooltip
-        location="top"
-      >
+      <v-tooltip location="top">
         <template #activator="{ props }">
           <v-btn
             :icon="themeIcon"
@@ -37,24 +34,24 @@
           />
         </template>
 
-        <span>
-          Switch to {{ isDarkMode ? "Light Mode" : "Dark Mode" }}
-        </span>
+        <span> Switch to {{ isDarkMode ? "Light Mode" : "Dark Mode" }} </span>
       </v-tooltip>
     </template>
   </v-app-bar>
 </template>
 
 <script lang="ts" setup>
-import { useTheme } from 'vuetify'
-import { mdiMoonWaningCrescent, mdiWhiteBalanceSunny, mdiPlus } from '@mdi/js';
+import { useTheme } from "vuetify";
+import { mdiMoonWaningCrescent, mdiWhiteBalanceSunny, mdiPlus } from "@mdi/js";
 
-const theme = useTheme()
+const theme = useTheme();
 
-const isDarkMode = computed(() => theme.global.name.value === 'dark')
-const themeIcon = computed(() => isDarkMode.value ? mdiWhiteBalanceSunny : mdiMoonWaningCrescent )
+const isDarkMode = computed(() => theme.global.name.value === "dark");
+const themeIcon = computed(() =>
+  isDarkMode.value ? mdiWhiteBalanceSunny : mdiMoonWaningCrescent
+);
 
-function toggleTheme () {
-  theme.global.name.value = isDarkMode.value ? 'light' : 'dark'
+function toggleTheme() {
+  theme.global.name.value = isDarkMode.value ? "light" : "dark";
 }
 </script>
