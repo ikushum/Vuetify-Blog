@@ -11,7 +11,7 @@
       <template #actions>
         <v-spacer />
 
-        <v-btn @click="emit('update:modelValue', false)">
+        <v-btn @click="emit('update:model-value', false)">
           Cancel
         </v-btn>
 
@@ -32,7 +32,7 @@ import { useSnackbarStore } from '@/stores/snackbar'
 import { type DeleteBlogDialogProps } from "@/interfaces/blog";
 
 const props = defineProps<DeleteBlogDialogProps>();
-const emit = defineEmits(["update:modelValue"]);
+const emit = defineEmits(["update:model-value", "success"]);
 
 const blogStore = useBlogStore()
 const snackbarStore = useSnackbarStore()
@@ -46,6 +46,7 @@ function deleteBlog () {
     message: 'The blog post was deleted.'
   })
 
-  emit('update:modelValue', false)
+  emit('update:model-value', false)
+  emit('success')
 }
 </script>

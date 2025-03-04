@@ -130,7 +130,7 @@ function editBlog (payload: BlogPost) {
     message: 'Your blog has been updated'
   })
 
-  router.push('/')
+  router.push(`/blog/${payload.id}`)
 }
 
 function createBlog (payload: BlogPost) {
