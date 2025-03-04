@@ -9,7 +9,7 @@
         Latest Blog
       </h3>
 
-      <div class="mb-10">
+      <div class="my-5">
         <LargeBlogCard :blog="latestBlog" />
       </div>
 
@@ -18,7 +18,7 @@
           More Blogs
         </h3>
 
-        <v-row class="mb-10">
+        <v-row class="my-5">
           <v-col
             v-for="blog in popularBlogs"
             :key="blog.id"

@@ -105,8 +105,9 @@ const date = computed(() => {
 </script>
 
 <style scoped>
+/* NOTE: Custom CSS was required here because the blog content have line break */
 .formatted-text {
-  white-space: pre-line; /* Preserves line breaks */
-  word-wrap: break-word; /* Wraps long words */
+  white-space: pre-line;
+  word-wrap: break-word;
 }
 </style>

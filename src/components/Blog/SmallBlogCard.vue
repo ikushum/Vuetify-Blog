@@ -1,18 +1,20 @@
 <template>
   <div>
-    <v-img
-      :src="`https://picsum.photos/400/200/?random=${props.blog.id}`"
-      cover
-      height="250px"
-      class="rounded-lg mb-3"
-      gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
-    />
+    <router-link :to="`/blog/${props.blog.id}`">
+      <v-img
+        :src="`https://picsum.photos/400/200/?random=${props.blog.id}`"
+        cover
+        height="250px"
+        class="rounded-lg mb-3"
+        gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
+      />
+    </router-link>
 
     <v-card
       flat
       height="100%"
+      color="transparent"
       class="d-flex flex-column"
-      :class="{ 'px-5 pt-5': isDarkMode }"
     >
       <div class="d-flex align-center">
         <v-avatar
@@ -33,7 +35,13 @@
       </div>
 
       <v-card-title class="px-0 pt-1">
-        {{ props.blog.title }}
+        <router-link
+          :to="`/blog/${props.blog.id}`"
+          class="text-decoration-none"
+          :class="isDarkMode ? 'text-white': 'text-black'"
+        >
+          {{ props.blog.title }}
+        </router-link>
       </v-card-title>
 
       <v-card-text class="pa-0">

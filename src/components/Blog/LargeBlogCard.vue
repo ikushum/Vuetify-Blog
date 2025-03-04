@@ -7,13 +7,15 @@
       cols="12"
       md="7"
     >
-      <v-img
-        :height="isSmallScreen ? '250px' : '350px'"
-        :src="`https://picsum.photos/400/200/?random=${props.blog.id}`"
-        cover
-        class="rounded-lg"
-        gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
-      />
+      <router-link :to="`/blog/${props.blog.id}`">
+        <v-img
+          :height="isSmallScreen ? '250px' : '350px'"
+          :src="`https://picsum.photos/400/200/?random=${props.blog.id}`"
+          cover
+          class="rounded-lg"
+          gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
+        />
+      </router-link>
     </v-col>
 
     <v-col
@@ -23,10 +25,11 @@
       <v-card
         flat
         height="100%"
+        color="transparent"
       >
         <v-card-text
           class="pb-0"
-          :class="{ 'pt-0': isSmallScreen && !isDarkMode }"
+          :class="{ 'pt-0': isSmallScreen }"
         >
           <div class="d-flex align-center">
             <v-avatar
@@ -48,7 +51,13 @@
         </v-card-text>
 
         <v-card-title class="text-h4">
-          {{ props.blog.title }}
+          <router-link
+            :to="`/blog/${props.blog.id}`"
+            class="text-decoration-none"
+            :class="isDarkMode ? 'text-white': 'text-black'"
+          >
+            {{ props.blog.title }}
+          </router-link>
         </v-card-title>
 
         <v-card-text class="text-body-1 py-2">
