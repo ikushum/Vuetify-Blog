@@ -41,13 +41,20 @@
       </v-col>
     </v-row>
 
-    <div class="text-center">
+    <div class="text-center mt-2">
       <v-btn
         :text="shouldEdit ? 'Update' : 'Post'"
         variant="flat"
         color="primary"
         type="submit"
-        class="mt-2 px-10"
+        class="px-10 mx-3"
+      />
+
+      <v-btn
+        text="Back"
+        variant="flat"
+        class="px-10 mx-3"
+        @click="router.back()"
       />
     </div>
   </v-form>
