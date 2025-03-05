@@ -18,7 +18,7 @@
           More Blogs
         </h3>
 
-        <v-row class="my-5">
+        <v-row class="mb-5">
           <v-col
             v-for="blog in popularBlogs"
             :key="blog.id"

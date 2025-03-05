@@ -49,13 +49,6 @@
         type="submit"
         class="px-10 mx-3"
       />
-
-      <v-btn
-        text="Back"
-        variant="flat"
-        class="px-10 mx-3"
-        @click="router.back()"
-      />
     </div>
   </v-form>
 </template>
@@ -142,6 +135,6 @@ function createBlog (payload: BlogPost) {
     message: 'Your blog has been posted'
   })
 
-  router.push('/')
+  router.push(`/blog/${payload.id}`)
 }
 </script>

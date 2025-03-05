@@ -5,7 +5,14 @@
         cols="12"
         sm="6"
       >
-        <div class="my-5 text-center">
+        <div class="my-5 text-center position-relative">
+          <v-btn
+            :icon="mdiArrowLeft"
+            variant="flat"
+            class="position-absolute left-0"
+            @click="router.back()"
+          />
+
           <h3 class="text-h4 mb-2 font-weight-bold">
             Update Blog
           </h3>
@@ -24,10 +31,12 @@
 </template>
 
 <script lang="ts" setup>
+import { mdiArrowLeft } from "@mdi/js";
 import { useBlogStore } from '@/stores/blog'
 
-const route = useRoute<'/blog/[id]/edit'>()
+const router = useRouter()
 const blogStore = useBlogStore()
+const route = useRoute<'/blog/[id]/edit'>()
 
 const blog = computed(() => blogStore.getById(route.params.id));
 </script>

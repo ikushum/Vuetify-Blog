@@ -5,12 +5,17 @@
     color="grey-darken-4"
   >
     <v-app-bar-title>
-      <router-link
+      <v-btn
         to="/"
-        class="text-decoration-none"
+        :active="false"
       >
-        <AppLogo />
-      </router-link>
+        <v-icon
+          class="mr-1"
+          :icon="mdiHomeOutline"
+        />
+
+        <span>Home</span>
+      </v-btn>
     </v-app-bar-title>
 
     <template #append>
@@ -20,7 +25,7 @@
         to="/create"
       >
         <v-icon>{{ mdiPlus }}</v-icon>
-        New
+        Create
       </v-btn>
 
       <v-tooltip location="top">
@@ -28,7 +33,7 @@
           <v-btn
             :icon="themeIcon"
             v-bind="props"
-            class="mr-10"
+            class="mr-7"
             density="compact"
             @click="toggleTheme"
           />
@@ -42,7 +47,12 @@
 
 <script lang="ts" setup>
 import { useTheme } from "vuetify";
-import { mdiMoonWaningCrescent, mdiWhiteBalanceSunny, mdiPlus } from "@mdi/js";
+import {
+  mdiMoonWaningCrescent,
+  mdiWhiteBalanceSunny,
+  mdiPlus,
+  mdiHomeOutline,
+} from "@mdi/js";
 
 const theme = useTheme();
 

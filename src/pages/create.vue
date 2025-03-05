@@ -5,7 +5,14 @@
         cols="12"
         sm="6"
       >
-        <div class="my-5 text-center">
+        <div class="my-5 text-center position-relative">
+          <v-btn
+            :icon="mdiArrowLeft"
+            variant="flat"
+            class="position-absolute left-0"
+            @click="router.back()"
+          />
+
           <h3 class="text-h4 mb-2 font-weight-bold">
             Post a Blog
           </h3>
@@ -21,5 +28,8 @@
   </v-container>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
+import { mdiArrowLeft } from "@mdi/js";
+
+const router = useRouter()
 </script>
