@@ -6,6 +6,7 @@
     <h3 class="text-h5 font-weight-bold my-5">
       Latest Blog
     </h3>
+
     <div class="my-5">
       <LargeBlogCard :blog="latestBlog" />
     </div>
@@ -14,6 +15,7 @@
       <h3 class="text-h6 font-weight-bold my-5">
         More Blogs
       </h3>
+
       <v-row>
         <v-col
           v-for="blog in popularBlogs"

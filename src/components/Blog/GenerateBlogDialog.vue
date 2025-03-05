@@ -12,7 +12,6 @@
       <template #actions>
         <v-spacer />
 
-
         <v-btn @click="emit('update:model-value', false)">
           Cancel
         </v-btn>
