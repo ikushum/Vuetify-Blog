@@ -8,18 +8,18 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppLogo: typeof import('./components/Layouts/AppLogo.vue')['default']
-    BlogForm: typeof import('./components/Blog/BlogForm.vue')['default']
-    DeleteBlogDialog: typeof import('./components/Blog/DeleteBlogDialog.vue')['default']
-    GenerateBlogDialog: typeof import('./components/Blog/GenerateBlogDialog.vue')['default']
-    LargeBlogCard: typeof import('./components/Blog/LargeBlogCard.vue')['default']
+    BlogForm: typeof import('./components/blog/BlogForm.vue')['default']
+    DeleteBlogDialog: typeof import('./components/blog/DeleteBlogDialog.vue')['default']
+    GenerateBlogDialog: typeof import('./components/blog/GenerateBlogDialog.vue')['default']
+    LargeBlogCard: typeof import('./components/blog/LargeBlogCard.vue')['default']
     NoBlogContent: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
-    NoBlogPlaceholder: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
-    NotFoundPage: typeof import('./components/Common/NotFoundPage.vue')['default']
+    NoBlogPlaceholder: typeof import('./components/blog/NoBlogPlaceholder.vue')['default']
+    NotFound: typeof import('./components/common/NotFound.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SmallBlogCard: typeof import('./components/Blog/SmallBlogCard.vue')['default']
-    TheAppBar: typeof import('./components/Layouts/TheAppBar.vue')['default']
-    TheAppFooter: typeof import('./components/Layouts/TheAppFooter.vue')['default']
-    TheAppSnackbar: typeof import('./components/Layouts/TheAppSnackbar.vue')['default']
+    SmallBlogCard: typeof import('./components/blog/SmallBlogCard.vue')['default']
+    TheAppBar: typeof import('./components/layout/TheAppBar.vue')['default']
+    TheAppFooter: typeof import('./components/layout/TheAppFooter.vue')['default']
+    TheAppSnackbar: typeof import('./components/layout/TheAppSnackbar.vue')['default']
   }
 }

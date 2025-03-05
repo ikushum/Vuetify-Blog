@@ -27,7 +27,7 @@
     </v-row>
   </v-container>
 
-  <NotFoundPage v-else />
+  <NotFound v-else />
 </template>
 
 <script setup lang="ts">

@@ -1,4 +1,4 @@
 <template>
-  <NotFoundPage />
+  <NotFound />
 </template>
 
