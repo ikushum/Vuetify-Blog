@@ -1,29 +1,29 @@
 import { defineStore } from 'pinia'
-import blogDB from '@/utils/blogDatabase'
+import localStorageBlog from '@/utils/localStorageBlog'
 import type { BlogPost, BlogStoreState } from '@/interfaces/blog'
 
 export const useBlogStore = defineStore('blog', {
   state: (): BlogStoreState => ({
-    blogs: blogDB.getAll()
+    blogs: localStorageBlog.getAll()
   }),
   getters: {
     getById: (state) => (id: string) => state.blogs.find((blog) => blog.id === id),
   },
   actions: {
     generate () {
-      this.blogs = blogDB.generate()
+      this.blogs = localStorageBlog.generate()
     },
     add (blog: BlogPost) {
       this.blogs.unshift(blog)
-      blogDB.add(blog)
+      localStorageBlog.add(blog)
     },
     update (blog: BlogPost) {
-      blogDB.update(blog)
-      this.blogs = blogDB.getAll()
+      localStorageBlog.update(blog)
+      this.blogs = localStorageBlog.getAll()
     },
     delete (id: string) {
-      blogDB.delete(id)
-      this.blogs = blogDB.getAll()
+      localStorageBlog.delete(id)
+      this.blogs = localStorageBlog.getAll()
     }
   }
 })
