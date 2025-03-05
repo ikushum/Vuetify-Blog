@@ -14,7 +14,7 @@ declare module 'vue' {
     LargeBlogCard: typeof import('./components/Blog/LargeBlogCard.vue')['default']
     NoBlogContent: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
     NoBlogPlaceholder: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
-    NotFoundPage: typeof import('./components/Commons/NotFoundPage.vue')['default']
+    NotFoundPage: typeof import('./components/Common/NotFoundPage.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SmallBlogCard: typeof import('./components/Blog/SmallBlogCard.vue')['default']
