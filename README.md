@@ -1,81 +1,66 @@
-# Vuetify (Default)
+# Vuetify Blog
 
-This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
+A simple blog application built using Vuetify
 
-## ❗️ Important Links
+🌍 [Live Demo](https://vuetify-blog.netlify.app)
 
-- 📄 [Docs](https://vuetifyjs.com/)
-- 🚨 [Issues](https://issues.vuetifyjs.com/)
-- 🏬 [Store](https://store.vuetifyjs.com/)
-- 🎮 [Playground](https://play.vuetifyjs.com/)
-- 💬 [Discord](https://community.vuetifyjs.com)
+### 💿 Installing Dependencies
 
-## 💿 Install
+To get started, clone the project and run the following command to install all required dependencies:
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
+```bash
+yarn install
+```
 
-| Package Manager                                                | Command        |
-|---------------------------------------------------------------|----------------|
-| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
-| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
-| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
-| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
+### 💡 Starting the Development Server
 
-After completing the installation, your environment is ready for Vuetify development.
-
-## ✨ Features
-
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- 💻 **Enhanced Development Experience**: Benefit from TypeScript's static type checking and the ESLint plugin suite for Vue, ensuring code quality and consistency. [TypeScript](https://www.typescriptlang.org/) | [ESLint Plugin Vue](https://eslint.vuejs.org/)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
-- 🛠️ **Strongly-Typed Vue**: Use vue-tsc for type-checking your Vue components, and enjoy a robust development experience. [vue-tsc](https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc)
-
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
-
-## 💡 Usage
-
-This section covers how to start the development server and build your project for production.
-
-### Starting the Development Server
-
-To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
+To start the development server, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000)
 
 ```bash
 yarn dev
 ```
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+## Screenshots
 
-> Add NODE_OPTIONS='--no-warnings' to suppress the JSON import warnings that happen as part of the Vuetify import mapping. If you are on Node [v21.3.0](https://nodejs.org/en/blog/release/v21.3.0) or higher, you can change this to NODE_OPTIONS='--disable-warning=5401'. If you don't mind the warning, you can remove this from your package.json dev script.
+### 👉 **Generate Sample Blogs**: 
+Automatically generates a list of blogs to quickly explore other features.
 
-### Building for Production
+<img src="https://github.com/user-attachments/assets/4faf6318-df59-4c98-b331-650376d9a77d" width="70%"/>
+<img src="https://github.com/user-attachments/assets/c08e8092-fcb5-4657-9fc1-bdaf553d5b62" width="70%"/>
 
-To build your project for production, use:
+### 👉 **View Blog List**: 
+Users can view and navigate through a list of all available blogs.
 
-```bash
-yarn build
-```
+<img src="https://github.com/user-attachments/assets/2581e851-b213-4c6c-b723-f730ef5d60c1" width="70%"/>
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+### 👉 **View Full Blog**: 
+Users can read the complete content of a selected blog post.
 
-Once the build process is completed, your application will be ready for deployment in a production environment.
+<img src="https://github.com/user-attachments/assets/42f84ae1-08c0-4f42-b94d-bb6ca511af05" width="70%"/>
 
-## 💪 Support Vuetify Development
+### 👉 **Create Blog**: 
+Allows users to create new blog posts.
 
-This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
+<img src="https://github.com/user-attachments/assets/8300d1ab-ed6f-43f8-a1ef-c2977eae6a4f" width="70%"/>
+<img src="https://github.com/user-attachments/assets/5d09881b-8dc0-437b-9d47-64d44ff446b2" width="70%"/>
 
-- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
-- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
-- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
-- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
-- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
-- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
-- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
+### 👉 **Update Blog**: 
+Allows users to modify existing blog posts.
 
-## 📑 License
-[MIT](http://opensource.org/licenses/MIT)
+<img src="https://github.com/user-attachments/assets/dbf802e7-f00e-45c4-add9-4dee92bb4742" width="70%"/>
+<img src="https://github.com/user-attachments/assets/cc8adecf-8f0c-4a78-b49e-57c8cb6df0e8" width="70%"/>
 
-Copyright (c) 2016-present Vuetify, LLC
+### 👉 **Delete Blog**: 
+Allows users to delete unwanted blog posts.
+
+<img src="https://github.com/user-attachments/assets/b5202242-4eda-4355-8594-891bb4cb92eb" width="70%"/>
+<img src="https://github.com/user-attachments/assets/4c7dacc6-0cb1-45f6-be52-8022df0d5b91" width="70%"/>
+
+### 👉 **Dark/Light Mode**: 
+Users can switch between light and dark mode.
+
+<img src="https://github.com/user-attachments/assets/81e04d7f-83c2-482d-94f7-fd92ace15258" width="70%"/>
+
+---
+
+Built with ❤️ using Vuetify
