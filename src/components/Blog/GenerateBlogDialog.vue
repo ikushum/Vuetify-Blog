@@ -12,6 +12,7 @@
       <template #actions>
         <v-spacer />
 
+
         <v-btn @click="emit('update:model-value', false)">
           Cancel
         </v-btn>
@@ -37,7 +38,7 @@ const emit = defineEmits(["update:model-value"]);
 const blogStore = useBlogStore()
 const snackbarStore = useSnackbarStore()
 
-function generateBlogs () {
+function generateBlogs() {
   blogStore.generate()
 
   snackbarStore.show({

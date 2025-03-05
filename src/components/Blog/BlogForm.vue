@@ -9,7 +9,7 @@
       <v-col cols="12">
         <v-text-field
           v-model="formValues.title"
-          :rules="fieldRules('Title')"
+          :rules="[requiredRule('Title')]"
           :prepend-inner-icon="mdiNoteOutline"
           required
           label="Title"
@@ -20,7 +20,7 @@
       <v-col cols="12">
         <v-text-field
           v-model="formValues.author"
-          :rules="fieldRules('Author')"
+          :rules="[requiredRule('Author')]"
           :prepend-inner-icon="mdiFaceMan"
           required
           label="Author"
@@ -31,7 +31,7 @@
       <v-col cols="12">
         <v-textarea
           v-model="formValues.text"
-          :rules="fieldRules('Text')"
+          :rules="[requiredRule('Text')]"
           :prepend-inner-icon="mdiText"
           required
           :rows="5"
@@ -55,86 +55,66 @@
 
 <script lang="ts" setup>
 import type { SubmitEventPromise } from "vuetify";
-import {
-  mdiText,
-  mdiFaceMan,
-  mdiNoteOutline,
-} from "@mdi/js";
-import { generateUUID } from '@/utils/index'
-import { useBlogStore } from '@/stores/blog'
+import { mdiText, mdiFaceMan, mdiNoteOutline } from "@mdi/js";
+import { generateUUID } from "@/utils/index";
+import { useBlogStore } from "@/stores/blog";
 import { useSnackbarStore } from "@/stores/snackbar";
-import type { BlogFormProps, BlogFormValues, BlogPost } from "@/interfaces/blog";
-
-const fallbackFormValues = {
-  text: "",
-  title: "",
-  author: "",
-}
+import type {
+  BlogFormProps,
+  BlogFormValues,
+  BlogPost,
+} from "@/interfaces/blog";
 
 const props = defineProps<BlogFormProps>();
 
-const router = useRouter()
-const blogStore = useBlogStore()
+const router = useRouter();
+const blogStore = useBlogStore();
 const snackbarStore = useSnackbarStore();
 
 const isFormValid = ref(false);
-const formValues = ref<BlogFormValues>(props.defaultValues || fallbackFormValues);
+const formValues = ref<BlogFormValues>({
+  text: "",
+  title: "",
+  author: "",
+  ...props.defaultValues,
+});
 
-const shouldEdit = computed(() => !!formValues.value.id)
+const shouldEdit = computed(() => !!formValues.value.id);
 
-const fieldRules = (fieldName: string) => [
-  (value: string) => {
-    if (value) {
-      return true;
-    }
-
-    return `${fieldName} is required.`;
-  },
-];
+const requiredRule = (field: string) => (value: string) =>
+  value ? true : `${field} is required.`;
 
 async function validateAndSave(event: SubmitEventPromise) {
   await event;
 
   if (!isFormValid.value) {
-    return
+    return;
   }
 
-  const payload = {
+  const payload: BlogPost = {
     id: formValues.value.id || generateUUID(),
     title: formValues.value.title,
     text: formValues.value.text,
     author: formValues.value.author,
     date: formValues.value.date || new Date().toISOString(),
-  }
+  };
 
-  if (shouldEdit.value) {
-    editBlog(payload)
-  } else {
-    createBlog(payload)
-  }
+  shouldEdit.value ? editBlog(payload) : createBlog(payload);
 }
 
-function editBlog (payload: BlogPost) {
-  blogStore.update(payload)
-
-  snackbarStore.show({
-    color: '',
-    isOpen: true,
-    message: 'Your blog has been updated'
-  })
-
-  router.push(`/blog/${payload.id}`)
+function editBlog(payload: BlogPost) {
+  blogStore.update(payload);
+  showSnackbar("Your blog has been updated");
+  router.push(`/blog/${payload.id}`);
 }
 
-function createBlog (payload: BlogPost) {
-  blogStore.add(payload)
+function createBlog(payload: BlogPost) {
+  blogStore.add(payload);
+  showSnackbar("Your blog has been posted");
+  router.push(`/blog/${payload.id}`);
+}
 
-  snackbarStore.show({
-    color: '',
-    isOpen: true,
-    message: 'Your blog has been posted'
-  })
-
-  router.push(`/blog/${payload.id}`)
+function showSnackbar(message: string) {
+  snackbarStore.show({ color: "", isOpen: true, message });
 }
 </script>

@@ -13,7 +13,6 @@
           class="mr-1"
           :icon="mdiHomeOutline"
         />
-
         <span>Home</span>
       </v-btn>
     </v-app-bar-title>
@@ -25,21 +24,20 @@
         to="/create"
       >
         <v-icon>{{ mdiPlus }}</v-icon>
-        Create
+        <span>Create</span>
       </v-btn>
 
       <v-tooltip location="top">
         <template #activator="{ props }">
           <v-btn
-            :icon="themeIcon"
             v-bind="props"
+            :icon="themeIcon"
             class="mr-7"
             density="compact"
             @click="toggleTheme"
           />
         </template>
-
-        <span> Switch to {{ isDarkMode ? "Light Mode" : "Dark Mode" }} </span>
+        <span>Switch to {{ switchThemeTooltipText }}</span>
       </v-tooltip>
     </template>
   </v-app-bar>
@@ -56,12 +54,15 @@ import {
 
 const theme = useTheme();
 
-const isDarkMode = computed(() => theme.global.name.value === "dark");
+const isDarkMode = computed(() => theme.global.current.value.dark);
 const themeIcon = computed(() =>
   isDarkMode.value ? mdiWhiteBalanceSunny : mdiMoonWaningCrescent
 );
+const switchThemeTooltipText = computed(() =>
+  isDarkMode.value ? "Light Mode" : "Dark Mode"
+);
 
-function toggleTheme() {
+const toggleTheme = () => {
   theme.global.name.value = isDarkMode.value ? "light" : "dark";
-}
+};
 </script>

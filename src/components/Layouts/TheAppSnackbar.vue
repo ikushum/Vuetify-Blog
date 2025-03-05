@@ -10,9 +10,8 @@
     <template #actions>
       <v-btn
         icon
-        small
-        dark
-        @click="snackbarStore.snackbar.isOpen = false"
+        size="small"
+        @click="snackbarStore.hide()"
       >
         <v-icon small>
           {{ mdiClose }}

@@ -31,5 +31,5 @@
 <script setup lang="ts">
 import { mdiArrowLeft } from "@mdi/js";
 
-const router = useRouter()
+const router = useRouter();
 </script>

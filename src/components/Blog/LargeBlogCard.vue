@@ -10,10 +10,10 @@
       <router-link :to="`/blog/${props.blog.id}`">
         <v-img
           :height="isSmallScreen ? '250px' : '350px'"
-          :src="`https://picsum.photos/400/200/?random=${props.blog.id}`"
+          :src="imageUrl"
           cover
           class="rounded-lg"
-          gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
+          :gradient="imageGradient"
         />
       </router-link>
     </v-col>
@@ -28,8 +28,8 @@
         color="transparent"
       >
         <v-card-text
-          class="pb-0"
           :class="{ 'pt-0': isSmallScreen }"
+          class="pb-0"
         >
           <div class="d-flex align-center">
             <v-avatar
@@ -37,16 +37,11 @@
               class="mr-2"
             >
               <v-img
-                gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
-                :src="`https://picsum.photos/400/200/?random=${
-                  props.blog.id + props.blog.title
-                }`"
+                :src="avatarUrl"
+                :gradient="imageGradient"
               />
             </v-avatar>
-
-            <span class="text-grey">
-              {{ props.blog.author }}
-            </span>
+            <span class="text-grey">{{ props.blog.author }}</span>
           </div>
         </v-card-text>
 
@@ -54,14 +49,14 @@
           <router-link
             :to="`/blog/${props.blog.id}`"
             class="text-decoration-none"
-            :class="isDarkMode ? 'text-white': 'text-black'"
+            :class="isDarkMode ? 'text-white' : 'text-black'"
           >
             {{ props.blog.title }}
           </router-link>
         </v-card-title>
 
         <v-card-text class="text-body-1 py-2">
-          {{ text }}
+          {{ truncatedText }}
         </v-card-text>
 
         <v-card-actions class="px-4">
@@ -72,8 +67,7 @@
             >
               {{ mdiClockOutline }}
             </v-icon>
-
-            {{ date }}
+            {{ formattedDate }}
           </div>
 
           <v-spacer />
@@ -149,17 +143,21 @@ import {
   mdiClockOutline,
 } from "@mdi/js";
 import { type LargeBlogCardProps } from "@/interfaces/blog";
-import { formatDate, truncateString } from "@/utils/index";
+import { formatDate, truncateString, getRandomImageUrl, imageGradient } from "@/utils/index";
 
 const props = defineProps<LargeBlogCardProps>();
 
 const theme = useTheme();
 const display = useDisplay();
 
-const isDeleteDialogOpen = ref(false)
+const isDeleteDialogOpen = ref(false);
 
-const date = computed(() => formatDate(props.blog.date));
 const isSmallScreen = computed(() => display.mobile.value);
 const isDarkMode = computed(() => theme.global.name.value === "dark");
-const text = computed(() => truncateString(props.blog.text, 150));
+
+const formattedDate = computed(() => formatDate(props.blog.date));
+const truncatedText = computed(() => truncateString(props.blog.text, 150));
+
+const avatarUrl = computed(() => getRandomImageUrl({id: props.blog.id, dimension: [20, 20]}));
+const imageUrl = computed(() => getRandomImageUrl({id: props.blog.id, dimension: [400, 200]}));
 </script>

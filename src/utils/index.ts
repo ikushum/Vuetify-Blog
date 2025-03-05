@@ -21,3 +21,9 @@ export const generateUUID = (): string => {
     return v.toString(16);
   });
 };
+
+export const getRandomImageUrl = ({ id, dimension }: {id: string, dimension: number[]}) => {
+  return `https://picsum.photos/${dimension[0]}/${dimension[1]}/?random=${id}`
+}
+
+export const imageGradient = "to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"

@@ -11,7 +11,8 @@
     <v-btn
       flat
       color="primary"
-      @click="router.push({path: '/'})"
+      class="px-10"
+      @click="router.push('/')"
     >
       Go Home
     </v-btn>
@@ -19,6 +20,6 @@
 </template>
 
 <script lang="ts" setup>
-const router = useRouter()
+const router = useRouter();
 </script>
 

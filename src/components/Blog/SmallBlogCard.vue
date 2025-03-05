@@ -2,11 +2,11 @@
   <div>
     <router-link :to="`/blog/${props.blog.id}`">
       <v-img
-        :src="`https://picsum.photos/400/200/?random=${props.blog.id}`"
+        :src="imageUrl"
         cover
         height="250px"
         class="rounded-lg mb-3"
-        gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
+        :gradient="imageGradient"
       />
     </router-link>
 
@@ -22,30 +22,26 @@
           class="mr-2"
         >
           <v-img
-            :src="`https://picsum.photos/400/200/?random=${
-              props.blog.id + props.blog.title
-            }`"
-            gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
+            :src="avatarUrl"
+            :gradient="imageGradient"
           />
         </v-avatar>
 
-        <span class="text-caption text-grey">
-          {{ props.blog.author }}
-        </span>
+        <span class="text-caption text-grey">{{ props.blog.author }}</span>
       </div>
 
       <v-card-title class="px-0 pt-1">
         <router-link
           :to="`/blog/${props.blog.id}`"
           class="text-decoration-none"
-          :class="isDarkMode ? 'text-white': 'text-black'"
+          :class="isDarkMode ? 'text-white' : 'text-black'"
         >
           {{ props.blog.title }}
         </router-link>
       </v-card-title>
 
       <v-card-text class="pa-0">
-        {{ text }}
+        {{ truncatedText }}
       </v-card-text>
 
       <v-spacer />
@@ -59,7 +55,7 @@
             {{ mdiClockOutline }}
           </v-icon>
 
-          {{ date }}
+          {{ formattedDate }}
         </div>
 
         <v-spacer />
@@ -134,16 +130,19 @@ import {
   mdiDotsVertical,
   mdiClockOutline,
 } from "@mdi/js";
-import { formatDate, truncateString } from "@/utils/index";
 import { type SmallBlogCardProps } from "@/interfaces/blog";
+import { formatDate, truncateString, getRandomImageUrl, imageGradient } from "@/utils";
 
 const props = defineProps<SmallBlogCardProps>();
 
 const theme = useTheme();
+const isDeleteDialogOpen = ref(false);
 
-const isDeleteDialogOpen = ref(false)
-
-const date = computed(() => formatDate(props.blog.date));
 const isDarkMode = computed(() => theme.global.name.value === "dark");
-const text = computed(() => truncateString(props.blog.text, 100));
+
+const formattedDate = computed(() => formatDate(props.blog.date));
+const truncatedText = computed(() => truncateString(props.blog.text, 100));
+
+const avatarUrl = computed(() => getRandomImageUrl({ id: props.blog.id, dimension: [20, 20] }));
+const imageUrl = computed(() => getRandomImageUrl({ id: props.blog.id, dimension: [400, 200] }));
 </script>

@@ -18,7 +18,7 @@
           </h3>
 
           <p class="text-grey">
-            Please fill the form below to update yout blog.
+            Please fill the form below to update your blog.
           </p>
         </div>
 
@@ -30,13 +30,13 @@
   <NotFoundPage v-else />
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 import { mdiArrowLeft } from "@mdi/js";
-import { useBlogStore } from '@/stores/blog'
+import { useBlogStore } from "@/stores/blog";
 
-const router = useRouter()
-const blogStore = useBlogStore()
-const route = useRoute<'/blog/[id]/edit'>()
+const router = useRouter();
+const blogStore = useBlogStore();
+const route = useRoute<'/blog/[id]/edit'>();
 
 const blog = computed(() => blogStore.getById(route.params.id));
 </script>

@@ -28,17 +28,17 @@
 </template>
 
 <script lang="ts" setup>
-import { useBlogStore } from '@/stores/blog'
-import { useSnackbarStore } from '@/stores/snackbar'
-import { type DeleteBlogDialogProps } from "@/interfaces/blog";
+import { useBlogStore } from "@/stores/blog";
+import { useSnackbarStore } from "@/stores/snackbar";
+import type { DeleteBlogDialogProps } from "@/interfaces/blog";
 
 const props = defineProps<DeleteBlogDialogProps>();
 const emit = defineEmits(["update:model-value", "success"]);
 
-const blogStore = useBlogStore()
-const snackbarStore = useSnackbarStore()
+const blogStore = useBlogStore();
+const snackbarStore = useSnackbarStore();
 
-function deleteBlog () {
+function deleteBlog() {
   blogStore.delete(props.blog.id)
 
   snackbarStore.show({

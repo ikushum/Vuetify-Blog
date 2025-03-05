@@ -1,44 +1,41 @@
 <template>
-  <template v-if="!blogs.length">
-    <NoBlogPlaceholder />
-  </template>
+  <v-container
+    v-if="blogs.length"
+    class="mb-5"
+  >
+    <h3 class="text-h5 font-weight-bold my-5">
+      Latest Blog
+    </h3>
+    <div class="my-5">
+      <LargeBlogCard :blog="latestBlog" />
+    </div>
 
-  <template v-else-if="blogs.length">
-    <v-container>
-      <h3 class="text-h5 font-weight-bold my-5">
-        Latest Blog
+    <template v-if="blogs.length > 1">
+      <h3 class="text-h6 font-weight-bold my-5">
+        More Blogs
       </h3>
+      <v-row>
+        <v-col
+          v-for="blog in popularBlogs"
+          :key="blog.id"
+          cols="12"
+          md="4"
+        >
+          <SmallBlogCard :blog="blog" />
+        </v-col>
+      </v-row>
+    </template>
+  </v-container>
 
-      <div class="my-5">
-        <LargeBlogCard :blog="latestBlog" />
-      </div>
-
-      <template v-if="blogs.length > 1">
-        <h3 class="text-h6 font-weight-bold my-5">
-          More Blogs
-        </h3>
-
-        <v-row class="mb-5">
-          <v-col
-            v-for="blog in popularBlogs"
-            :key="blog.id"
-            cols="12"
-            md="4"
-          >
-            <SmallBlogCard :blog="blog" />
-          </v-col>
-        </v-row>
-      </template>
-    </v-container>
-  </template>
+  <NoBlogPlaceholder v-else />
 </template>
 
 <script setup lang="ts">
-import { useBlogStore } from '@/stores/blog'
+import { useBlogStore } from '@/stores/blog';
 
-const blogStore = useBlogStore()
+const blogStore = useBlogStore();
 
-const blogs = computed(() => blogStore.blogs)
+const blogs = computed(() => blogStore.blogs);
 const latestBlog = computed(() => blogs.value[0]);
-const popularBlogs = computed(() => [...blogs.value].slice(1));
+const popularBlogs = computed(() => blogs.value.slice(1));
 </script>

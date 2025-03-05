@@ -5,66 +5,60 @@
         cols="12"
         sm="7"
       >
-        <div>
-          <v-btn
-            variant="flat"
-            to="/"
-            class="my-5"
+        <v-btn
+          variant="flat"
+          to="/"
+          class="my-5"
+        >
+          <v-icon class="mr-2">
+            {{ mdiArrowLeft }}
+          </v-icon>
+
+          All Blogs
+        </v-btn>
+
+        <v-img
+          :src="imageUrl"
+          :gradient="imageGradient"
+          cover
+          height="350px"
+          class="rounded-lg"
+        />
+
+        <h3 class="text-h3 my-7 font-weight-bold">
+          {{ blog.title }}
+        </h3>
+
+        <v-list class="my-7 py-0 bg-transparent">
+          <v-list-item
+            :prepend-avatar="avatarUrl"
+            :subtitle="formattedDate"
+            :title="blog.author"
+            class="pl-0"
           >
-            <v-icon class="mr-2">
-              {{ mdiArrowLeft }}
-            </v-icon>
+            <template #append>
+              <v-btn
+                :icon="mdiPencilOutline"
+                size="small"
+                variant="text"
+                color="grey-darken-1"
+                :to="`/blog/${blog.id}/edit`"
+              />
 
-            All Blogs
-          </v-btn>
+              <v-btn
+                :icon="mdiTrashCanOutline"
+                size="small"
+                variant="text"
+                color="grey-darken-1"
+                @click="isDeleteDialogOpen = true"
+              />
+            </template>
+          </v-list-item>
+        </v-list>
 
-          <v-img
-            :src="`https://picsum.photos/400/200/?random=${blog.id}`"
-            cover
-            height="350px"
-            class="rounded-lg"
-            gradient="to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
-          />
-
-          <h3 class="text-h3 my-7 font-weight-bold">
-            {{ blog.title }}
-          </h3>
-
-          <v-list class="my-7 py-0 bg-transparent">
-            <v-list-item
-              :prepend-avatar="`https://picsum.photos/400/200/?random=${
-                blog.id + blog.title
-              }`"
-              :subtitle="date"
-              :title="blog.author"
-              class="pl-0"
-            >
-              <template #append>
-                <v-btn
-                  :icon="mdiPencilOutline"
-                  size="small"
-                  variant="text"
-                  color="grey-darken-1"
-                  :to="`/blog/${blog.id}/edit`"
-                />
-
-                <v-btn
-                  :icon="mdiTrashCanOutline"
-                  size="small"
-                  variant="text"
-                  color="grey-darken-1"
-                  @click="isDeleteDialogOpen = true"
-                />
-              </template>
-            </v-list-item>
-          </v-list>
-
-          <p
-            class="formatted-text my-7 text-body-1"
-          >
-            {{ blog.text }}
-          </p>
-        </div>
+        <p class="formatted-text my-7 text-body-1">
+          {{ blog.text }}
+        </p>
       </v-col>
     </v-row>
 
@@ -78,30 +72,25 @@
   <NotFoundPage v-else />
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 import {
   mdiArrowLeft,
   mdiPencilOutline,
   mdiTrashCanOutline,
 } from "@mdi/js";
-import { formatDate } from "@/utils/index";
-import { useBlogStore } from '@/stores/blog'
+import { formatDate, imageGradient, getRandomImageUrl } from "@/utils";
+import { useBlogStore } from "@/stores/blog";
 
-const router = useRouter()
+const router = useRouter();
+const blogStore = useBlogStore();
 const route = useRoute<'/blog/[id]/edit'>()
-const blogStore = useBlogStore()
 
-const isDeleteDialogOpen = ref(false)
+const isDeleteDialogOpen = ref(false);
 
 const blog = computed(() => blogStore.getById(route.params.id));
-
-const date = computed(() => {
-  if (!blog.value) {
-    return
-  }
-
-  return formatDate(blog.value.date)
-});
+const formattedDate = computed(() => blog.value && formatDate(blog.value.date));
+const avatarUrl = computed(() => blog.value && getRandomImageUrl({ id: blog.value.id, dimension: [20, 20] }));
+const imageUrl = computed(() => blog.value && getRandomImageUrl({ id: blog.value.id, dimension: [400, 200] }));
 </script>
 
 <style scoped>
