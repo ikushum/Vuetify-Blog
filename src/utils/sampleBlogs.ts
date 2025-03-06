@@ -1,4 +1,4 @@
-import type { BlogPost } from '@/interfaces/blog'
+import type { BlogPost } from '@/types/blog'
 
 export const sampleBlogPosts: BlogPost[] = [
   {

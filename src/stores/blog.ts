@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import localStorageBlog from '@/utils/localStorageBlog'
-import type { BlogPost, BlogStoreState } from '@/interfaces/blog'
+import type { BlogPost, BlogStoreState } from '@/types/blog'
 
 export const useBlogStore = defineStore('blog', {
   state: (): BlogStoreState => ({

@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia'
-import type { SnackbarStoreState, SnackbarState  } from '@/interfaces/snackbar'
+import type { SnackbarStoreState, SnackbarState  } from '@/types/snackbar'
 
 export const useSnackbarStore = defineStore('snackbar', {
   state: (): SnackbarStoreState => {

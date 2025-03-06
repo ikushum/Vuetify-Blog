@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type BlogImageProps } from "@/interfaces/blog";
+import { type BlogImageProps } from "@/types/blog";
 import { imageGradient } from "@/utils/index";
 
 const props = defineProps<BlogImageProps>();

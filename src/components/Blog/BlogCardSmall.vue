@@ -132,10 +132,10 @@ import {
   mdiDotsVertical,
   mdiClockOutline,
 } from "@mdi/js";
-import { type SmallBlogCardProps } from "@/interfaces/blog";
+import { type BlogSmallCardProps } from "@/types/blog";
 import { formatDate, truncateString, getRandomImageUrl, imageGradient } from "@/utils";
 
-const props = defineProps<SmallBlogCardProps>();
+const props = defineProps<BlogSmallCardProps>();
 
 const theme = useTheme();
 const isDeleteDialogOpen = ref(false);

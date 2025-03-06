@@ -1,4 +1,4 @@
-import type { BlogPost } from "@/interfaces/blog";
+import type { BlogPost } from "@/types/blog";
 import { sampleBlogPosts } from "@/utils/sampleBlogs";
 
 const STORAGE_KEY = "blogs";

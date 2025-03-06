@@ -139,10 +139,10 @@ import {
   mdiDotsVertical,
   mdiClockOutline,
 } from "@mdi/js";
-import { type LargeBlogCardProps } from "@/interfaces/blog";
+import { type BlogLargeCardProps } from "@/types/blog";
 import { formatDate, truncateString, getRandomImageUrl, imageGradient } from "@/utils/index";
 
-const props = defineProps<LargeBlogCardProps>();
+const props = defineProps<BlogLargeCardProps>();
 
 const theme = useTheme();
 const display = useDisplay();

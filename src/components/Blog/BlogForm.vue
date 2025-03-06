@@ -63,7 +63,7 @@ import type {
   BlogFormProps,
   BlogFormValues,
   BlogPost,
-} from "@/interfaces/blog";
+} from "@/types/blog";
 
 const props = defineProps<BlogFormProps>();
 

@@ -14,11 +14,11 @@ export interface BlogFormValues {
   author: string
 }
 
-export interface LargeBlogCardProps {
+export interface BlogLargeCardProps {
   blog: BlogPost
 }
 
-export interface SmallBlogCardProps {
+export interface BlogSmallCardProps {
   blog: BlogPost
 }
 
@@ -30,7 +30,7 @@ export interface BlogStoreState {
   blogs: BlogPost[]
 }
 
-export interface DeleteBlogDialogProps {
+export interface BlogDeleteDialogProps {
   blog: BlogPost
   modelValue: boolean
 }

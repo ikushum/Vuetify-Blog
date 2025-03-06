@@ -30,9 +30,9 @@
 <script lang="ts" setup>
 import { useBlogStore } from "@/stores/blog";
 import { useSnackbarStore } from "@/stores/snackbar";
-import type { DeleteBlogDialogProps } from "@/interfaces/blog";
+import type { BlogDeleteDialogProps } from "@/types/blog";
 
-const props = defineProps<DeleteBlogDialogProps>();
+const props = defineProps<BlogDeleteDialogProps>();
 const emit = defineEmits(["update:model-value", "success"]);
 
 const blogStore = useBlogStore();
