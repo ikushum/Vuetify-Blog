@@ -22,6 +22,5 @@ declare module 'vue-router/auto-routes' {
     '/blog/[id]/': RouteRecordInfo<'/blog/[id]/', '/blog/:id', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/blog/[id]/edit': RouteRecordInfo<'/blog/[id]/edit', '/blog/:id/edit', { id: ParamValue<true> }, { id: ParamValue<false> }>,
     '/create': RouteRecordInfo<'/create', '/create', Record<never, never>, Record<never, never>>,
-    '/not-found': RouteRecordInfo<'/not-found', '/not-found', Record<never, never>, Record<never, never>>,
   }
 }

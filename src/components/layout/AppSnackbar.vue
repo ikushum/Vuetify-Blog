@@ -1,10 +1,11 @@
 <template>
   <v-snackbar
-    v-model="snackbarStore.snackbar.isOpen"
-    :color="snackbarStore.snackbar.color"
+    :model-value="snackbarStore.isOpen"
+    :color="snackbarStore.color"
+    @update:model-value="handleSnackbarValueChange"
   >
     <span>
-      {{ snackbarStore.snackbar.message }}
+      {{ snackbarStore.message }}
     </span>
 
     <template #actions>
@@ -26,4 +27,10 @@ import { mdiClose } from "@mdi/js";
 import { useSnackbarStore } from "@/stores/snackbar";
 
 const snackbarStore = useSnackbarStore();
+
+function handleSnackbarValueChange (isOpen: boolean) {
+  if (!isOpen) {
+    snackbarStore.hide()
+  }
+}
 </script>

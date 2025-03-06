@@ -5,7 +5,7 @@ import { routes } from 'vue-router/auto-routes'
 const notFoundRoute = {
   name: 'NotFound',
   path: '/:pathMatch(.*)*',
-  component: () => import('@/pages/not-found.vue'),
+  component: () => import('@/components/common/NotFound.vue'),
 };
 
 const router = createRouter({

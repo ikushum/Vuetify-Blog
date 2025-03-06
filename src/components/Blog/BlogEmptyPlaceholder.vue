@@ -37,7 +37,7 @@
       Generate Sample Blogs
     </v-btn>
 
-    <GenerateBlogDialog v-model="isGenerateBlogDialogOpen" />
+    <BlogGenerateDialog v-model="isGenerateBlogDialogOpen" />
   </v-container>
 </template>
 

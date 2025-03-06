@@ -1,13 +1,13 @@
 <template>
   <v-app>
-    <TheAppBar />
+    <AppBar />
 
     <v-main>
       <router-view />
     </v-main>
 
-    <TheAppFooter />
+    <AppFooter />
 
-    <TheAppSnackbar />
+    <AppSnackbar />
   </v-app>
 </template>

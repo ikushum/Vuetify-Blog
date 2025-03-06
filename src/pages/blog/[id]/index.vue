@@ -62,7 +62,7 @@
       </v-col>
     </v-row>
 
-    <DeleteBlogDialog
+    <BlogGenerateDialog
       v-model="isDeleteDialogOpen"
       :blog="blog"
       @success="router.push('/')"
@@ -80,10 +80,11 @@ import {
 } from "@mdi/js";
 import { formatDate, imageGradient, getRandomImageUrl } from "@/utils";
 import { useBlogStore } from "@/stores/blog";
+import { useRoute } from "vue-router";
 
 const router = useRouter();
 const blogStore = useBlogStore();
-const route = useRoute<'/blog/[id]/edit'>()
+const route = useRoute<'/blog/[id]/'>()
 
 const isDeleteDialogOpen = ref(false);
 

@@ -7,19 +7,17 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    AppLogo: typeof import('./components/Layouts/AppLogo.vue')['default']
+    AppBar: typeof import('./components/layout/AppBar.vue')['default']
+    AppFooter: typeof import('./components/layout/AppFooter.vue')['default']
+    AppSnackbar: typeof import('./components/layout/AppSnackbar.vue')['default']
+    BlogCardLarge: typeof import('./components/blog/BlogCardLarge.vue')['default']
+    BlogCardSmall: typeof import('./components/blog/BlogCardSmall.vue')['default']
+    BlogDeleteDialog: typeof import('./components/blog/BlogDeleteDialog.vue')['default']
+    BlogEmptyPlaceholder: typeof import('./components/blog/BlogEmptyPlaceholder.vue')['default']
     BlogForm: typeof import('./components/blog/BlogForm.vue')['default']
-    DeleteBlogDialog: typeof import('./components/blog/DeleteBlogDialog.vue')['default']
-    GenerateBlogDialog: typeof import('./components/blog/GenerateBlogDialog.vue')['default']
-    LargeBlogCard: typeof import('./components/blog/LargeBlogCard.vue')['default']
-    NoBlogContent: typeof import('./components/Blog/NoBlogPlaceholder.vue')['default']
-    NoBlogPlaceholder: typeof import('./components/blog/NoBlogPlaceholder.vue')['default']
+    BlogGenerateDialog: typeof import('./components/blog/BlogGenerateDialog.vue')['default']
     NotFound: typeof import('./components/common/NotFound.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SmallBlogCard: typeof import('./components/blog/SmallBlogCard.vue')['default']
-    TheAppBar: typeof import('./components/layout/TheAppBar.vue')['default']
-    TheAppFooter: typeof import('./components/layout/TheAppFooter.vue')['default']
-    TheAppSnackbar: typeof import('./components/layout/TheAppSnackbar.vue')['default']
   }
 }

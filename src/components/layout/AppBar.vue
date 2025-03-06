@@ -19,7 +19,7 @@
 
     <template #append>
       <v-btn
-        class="mx-5"
+        class="mx-2"
         color="white"
         to="/create"
       >
@@ -46,7 +46,7 @@
 <script lang="ts" setup>
 import { useTheme } from "vuetify";
 import {
-  mdiMoonWaningCrescent,
+  mdiWeatherNight,
   mdiWhiteBalanceSunny,
   mdiPlus,
   mdiHomeOutline,
@@ -56,7 +56,7 @@ const theme = useTheme();
 
 const isDarkMode = computed(() => theme.global.current.value.dark);
 const themeIcon = computed(() =>
-  isDarkMode.value ? mdiWhiteBalanceSunny : mdiMoonWaningCrescent
+  isDarkMode.value ? mdiWhiteBalanceSunny : mdiWeatherNight
 );
 const switchThemeTooltipText = computed(() =>
   isDarkMode.value ? "Light Mode" : "Dark Mode"

@@ -115,7 +115,7 @@
       </v-card-actions>
     </v-card>
 
-    <DeleteBlogDialog
+    <BlogGenerateDialog
       v-model="isDeleteDialogOpen"
       :blog="props.blog"
     />

@@ -8,7 +8,7 @@
     </h3>
 
     <div class="my-5">
-      <LargeBlogCard :blog="latestBlog" />
+      <BlogCardLarge :blog="latestBlog" />
     </div>
 
     <template v-if="blogs.length > 1">
@@ -23,13 +23,13 @@
           cols="12"
           md="4"
         >
-          <SmallBlogCard :blog="blog" />
+          <BlogCardSmall :blog="blog" />
         </v-col>
       </v-row>
     </template>
   </v-container>
 
-  <NoBlogPlaceholder v-else />
+  <BlogEmptyPlaceholder v-else />
 </template>
 
 <script setup lang="ts">
