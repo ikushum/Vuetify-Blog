@@ -34,3 +34,8 @@ export interface DeleteBlogDialogProps {
   blog: BlogPost
   modelValue: boolean
 }
+
+export interface BlogImageProps {
+  height: string | number
+  src: string
+}

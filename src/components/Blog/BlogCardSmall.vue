@@ -1,14 +1,16 @@
 <template>
   <div>
-    <router-link :to="`/blog/${props.blog.id}`">
-      <v-img
-        :src="imageUrl"
-        cover
-        height="250px"
-        class="rounded-lg mb-3"
-        :gradient="imageGradient"
-      />
-    </router-link>
+    <div class="mb-3">
+      <router-link
+        :to="`/blog/${props.blog.id}`"
+        class=""
+      >
+        <BlogImage
+          height="250px"
+          :src="imageUrl"
+        />
+      </router-link>
+    </div>
 
     <v-card
       flat

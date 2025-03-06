@@ -8,12 +8,9 @@
       md="7"
     >
       <router-link :to="`/blog/${props.blog.id}`">
-        <v-img
+        <BlogImage
           :height="isSmallScreen ? '250px' : '350px'"
           :src="imageUrl"
-          cover
-          class="rounded-lg"
-          :gradient="imageGradient"
         />
       </router-link>
     </v-col>

@@ -17,12 +17,9 @@
           All Blogs
         </v-btn>
 
-        <v-img
-          :src="imageUrl"
-          :gradient="imageGradient"
-          cover
+        <BlogImage
+          :src="imageUrl || ''"
           height="350px"
-          class="rounded-lg"
         />
 
         <h3 class="text-h3 my-7 font-weight-bold">
@@ -78,7 +75,7 @@ import {
   mdiPencilOutline,
   mdiTrashCanOutline,
 } from "@mdi/js";
-import { formatDate, imageGradient, getRandomImageUrl } from "@/utils";
+import { formatDate, getRandomImageUrl } from "@/utils";
 import { useBlogStore } from "@/stores/blog";
 import { useRoute } from "vue-router";
 
