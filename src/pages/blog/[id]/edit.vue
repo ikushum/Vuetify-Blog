@@ -9,6 +9,7 @@
           <v-btn
             :icon="mdiArrowLeft"
             variant="flat"
+            aria-label="Back"
             class="position-absolute left-0"
             @click="router.back()"
           />
@@ -17,7 +18,7 @@
             Update Blog
           </h3>
 
-          <p class="text-grey">
+          <p class="font-weight-light">
             Please fill the form below to update your blog.
           </p>
         </div>

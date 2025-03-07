@@ -7,7 +7,7 @@
       Latest Blog
     </h3>
 
-    <div class="my-5">
+    <div class="mb-10">
       <BlogCardLarge :blog="latestBlog" />
     </div>
 

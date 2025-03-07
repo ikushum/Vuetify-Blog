@@ -4,21 +4,23 @@ A simple blog application built using Vuetify
 
 🌍 [Live Demo](https://vuetify-blog.netlify.app)
 
-### 💿 Installing Dependencies
+### 💡 Starting the Development Server
 
-To get started, clone the project and run the following command to install all required dependencies:
+Clone the project and run the following command to install all required dependencies:
 
 ```bash
 yarn install
 ```
-
-### 💡 Starting the Development Server
 
 To start the development server, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000)
 
 ```bash
 yarn dev
 ```
+
+## ✅ Lighthouse Score
+
+<img width="349" alt="Image" src="https://github.com/user-attachments/assets/87ade5bb-707a-43cf-ba31-56f1bce6ef51" />
 
 ## Screenshots
 

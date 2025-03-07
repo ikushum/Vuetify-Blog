@@ -1,6 +1,5 @@
 <template>
   <v-row
-    class="mb-10"
     align="center"
   >
     <v-col
@@ -36,9 +35,10 @@
               <v-img
                 :src="avatarUrl"
                 :gradient="imageGradient"
+                alt="Author Image"
               />
             </v-avatar>
-            <span class="text-grey">{{ props.blog.author }}</span>
+            <span class="font-weight-light">{{ props.blog.author }}</span>
           </div>
         </v-card-text>
 
@@ -57,7 +57,7 @@
         </v-card-text>
 
         <v-card-actions class="px-4">
-          <div class="d-flex align-center text-grey">
+          <div class="d-flex align-center font-weight-light">
             <v-icon
               class="mr-2"
               size="x-small"
@@ -72,8 +72,9 @@
           <v-btn
             color="primary"
             :to="`/blog/${props.blog.id}`"
+            aria-label="Full Blog"
           >
-            Read More
+            Full Blog
           </v-btn>
 
           <v-menu>
@@ -83,6 +84,7 @@
                 size="small"
                 variant="text"
                 v-bind="menuProps"
+                aria-label="Menu"
               />
             </template>
 
@@ -97,6 +99,7 @@
                     size="small"
                     variant="text"
                     color="grey-darken-1"
+                    aria-label="Delete"
                   />
                 </template>
 
@@ -113,6 +116,7 @@
                     size="small"
                     variant="text"
                     color="grey-darken-1"
+                    aria-label="Edit"
                   />
                 </template>
 

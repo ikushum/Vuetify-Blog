@@ -12,6 +12,7 @@
       <v-btn
         icon
         size="small"
+        aria-label="Close"
         @click="snackbarStore.hide()"
       >
         <v-icon small>

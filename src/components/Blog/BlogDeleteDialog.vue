@@ -12,12 +12,16 @@
       <template #actions>
         <v-spacer />
 
-        <v-btn @click="emit('update:model-value', false)">
+        <v-btn
+          aria-label="Cancel"
+          @click="emit('update:model-value', false)"
+        >
           Cancel
         </v-btn>
 
         <v-btn
           color="error"
+          aria-label="Delete"
           @click="deleteBlog"
         >
           Delete

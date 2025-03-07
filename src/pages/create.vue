@@ -9,6 +9,7 @@
           <v-btn
             :icon="mdiArrowLeft"
             variant="flat"
+            aria-label="Back"
             class="position-absolute left-0"
             @click="router.back()"
           />
@@ -17,7 +18,7 @@
             Post a Blog
           </h3>
 
-          <p class="text-grey">
+          <p class="font-weight-light">
             Please fill the form below to create a new blog post.
           </p>
         </div>

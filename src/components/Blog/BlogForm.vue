@@ -48,6 +48,7 @@
         color="primary"
         type="submit"
         class="px-10 mx-3"
+        :aria-label="shouldEdit ? 'Update' : 'Post'"
       />
     </div>
   </v-form>

@@ -4,6 +4,7 @@
     :height="props.height"
     :gradient="imageGradient"
     cover
+    alt="Blog Image"
     class="rounded-lg"
   >
     <template #placeholder>

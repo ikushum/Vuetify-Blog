@@ -20,6 +20,7 @@
           flat
           color="primary"
           class="px-10"
+          aria-label="Go Home"
           @click="router.push('/')"
         >
           Go Home

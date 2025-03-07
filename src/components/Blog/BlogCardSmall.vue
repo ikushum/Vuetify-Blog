@@ -26,10 +26,11 @@
           <v-img
             :src="avatarUrl"
             :gradient="imageGradient"
+            alt="Author Image"
           />
         </v-avatar>
 
-        <span class="text-caption text-grey">{{ props.blog.author }}</span>
+        <span class="text-caption font-weight-light">{{ props.blog.author }}</span>
       </div>
 
       <v-card-title class="px-0 pt-1">
@@ -49,7 +50,7 @@
       <v-spacer />
 
       <v-card-actions class="pt-0 px-0">
-        <div class="d-flex align-center text-caption text-grey">
+        <div class="d-flex align-center text-caption font-weight-light">
           <v-icon
             class="mr-2"
             size="x-small"
@@ -66,8 +67,9 @@
           size="small"
           color="primary"
           :to="`/blog/${props.blog.id}`"
+          aria-label="Full Blog"
         >
-          Read More
+          Full Blog
         </v-btn>
 
         <v-menu>
@@ -77,6 +79,7 @@
               size="small"
               variant="text"
               v-bind="menuProps"
+              aria-label="Menu"
             />
           </template>
 
@@ -91,6 +94,7 @@
                   size="small"
                   variant="text"
                   color="grey-darken-1"
+                  aria-label="Delete"
                 />
               </template>
 
@@ -107,6 +111,7 @@
                   size="small"
                   variant="text"
                   color="grey-darken-1"
+                  aria-label="Edit"
                 />
               </template>
 

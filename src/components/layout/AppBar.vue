@@ -8,11 +8,13 @@
       <v-btn
         to="/"
         :active="false"
+        aria-label="Home"
       >
         <v-icon
           class="mr-1"
           :icon="mdiHomeOutline"
         />
+
         <span>Home</span>
       </v-btn>
     </v-app-bar-title>
@@ -22,21 +24,28 @@
         class="mx-2"
         color="white"
         to="/create"
+        aria-label="Create Blog"
       >
         <v-icon>{{ mdiPlus }}</v-icon>
+
         <span>Create</span>
       </v-btn>
 
-      <v-tooltip location="top">
+      <v-tooltip
+        location="top"
+        :aria-label="switchThemeTooltipText"
+      >
         <template #activator="{ props }">
           <v-btn
             v-bind="props"
             :icon="themeIcon"
             class="mr-7"
             density="compact"
+            :aria-label="switchThemeTooltipText"
             @click="toggleTheme"
           />
         </template>
+
         <span>Switch to {{ switchThemeTooltipText }}</span>
       </v-tooltip>
     </template>

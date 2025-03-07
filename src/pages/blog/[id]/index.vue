@@ -9,6 +9,7 @@
           variant="flat"
           to="/"
           class="my-5"
+          aria-label="Home"
         >
           <v-icon class="mr-2">
             {{ mdiArrowLeft }}
@@ -22,7 +23,7 @@
           height="350px"
         />
 
-        <h3 class="text-h3 my-7 font-weight-bold">
+        <h3 class="text-h3 my-7 font-weight-medium">
           {{ blog.title }}
         </h3>
 
@@ -39,6 +40,7 @@
                 size="small"
                 variant="text"
                 color="grey-darken-1"
+                aria-label="Edit Blog"
                 :to="`/blog/${blog.id}/edit`"
               />
 
@@ -47,6 +49,7 @@
                 size="small"
                 variant="text"
                 color="grey-darken-1"
+                aria-label="Delete Blog"
                 @click="isDeleteDialogOpen = true"
               />
             </template>

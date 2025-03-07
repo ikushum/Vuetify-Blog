@@ -10,7 +10,7 @@
       <h3 class="text-h4 mb-2 font-weight-bold">
         You haven't posted any blogs yet
       </h3>
-      <p class="text-grey">
+      <p class="font-weight-light">
         Start creating blogs by clicking on "Create New"
       </p>
     </div>
@@ -19,6 +19,7 @@
       flat
       color="primary"
       class="px-10 mb-1"
+      aria-label="Create New"
       @click="router.push('/create')"
     >
       Create New
@@ -32,6 +33,7 @@
       variant="text"
       color="primary"
       class="px-10"
+      aria-label="Generate Sample Blogs"
       @click="isGenerateBlogDialogOpen = true"
     >
       Generate Sample Blogs
