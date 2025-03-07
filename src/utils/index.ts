@@ -26,4 +26,5 @@ export const getRandomImageUrl = ({ id, dimension }: {id: string, dimension: num
   return `https://picsum.photos/${dimension[0]}/${dimension[1]}/?random=${id}`
 }
 
-export const imageGradient = "to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)"
+export const imageGradient = "to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)"
+export const imageGradientHover = "to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)"

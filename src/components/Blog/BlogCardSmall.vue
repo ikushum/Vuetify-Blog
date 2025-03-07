@@ -8,6 +8,7 @@
         <BlogImage
           height="250px"
           :src="imageUrl"
+          has-hover-effect
         />
       </router-link>
     </div>

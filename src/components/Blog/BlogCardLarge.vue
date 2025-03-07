@@ -10,6 +10,7 @@
         <BlogImage
           :height="isSmallScreen ? '250px' : '350px'"
           :src="imageUrl"
+          has-hover-effect
         />
       </router-link>
     </v-col>
