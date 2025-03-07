@@ -62,7 +62,7 @@
       </v-col>
     </v-row>
 
-    <BlogGenerateDialog
+    <BlogDeleteDialog
       v-model="isDeleteDialogOpen"
       :blog="blog"
       @success="router.push('/')"
