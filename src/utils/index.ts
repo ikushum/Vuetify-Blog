@@ -22,9 +22,16 @@ export const generateUUID = (): string => {
   });
 };
 
+export function getRandomNumberFromUUID(uuid: string) {
+  const hexPart = uuid.replace(/-/g, '').slice(0, 8);
+  const number = parseInt(hexPart, 16);
+  return number % 1000;
+}
+
 export const getRandomImageUrl = ({ id, dimension }: {id: string, dimension: number[]}) => {
-  return `https://picsum.photos/${dimension[0]}/${dimension[1]}/?random=${id}`
+  return `https://picsum.photos/id/${getRandomNumberFromUUID(id)}/${dimension[0]}/${dimension[1]}`
 }
 
 export const imageGradient = "to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)"
 export const imageGradientHover = "to left top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)"
+

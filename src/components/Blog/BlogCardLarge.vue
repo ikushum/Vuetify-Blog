@@ -10,6 +10,7 @@
         <BlogImage
           :height="isSmallScreen ? '250px' : '350px'"
           :src="imageUrl"
+          :lazy-src="imageLazyUrl"
           has-hover-effect
         />
       </router-link>
@@ -161,5 +162,6 @@ const formattedDate = computed(() => formatDate(props.blog.date));
 const truncatedText = computed(() => truncateString(props.blog.text, 150));
 
 const avatarUrl = computed(() => getRandomImageUrl({id: props.blog.id, dimension: [20, 20]}));
-const imageUrl = computed(() => getRandomImageUrl({id: props.blog.id, dimension: [400, 200]}));
+const imageUrl = computed(() => getRandomImageUrl({id: props.blog.id, dimension: [600, 300]}));
+const imageLazyUrl = computed(() => getRandomImageUrl({id: props.blog.id, dimension: [4, 2]}));
 </script>

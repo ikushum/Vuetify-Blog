@@ -38,5 +38,6 @@ export interface BlogDeleteDialogProps {
 export interface BlogImageProps {
   height: string | number
   src: string
+  lazySrc: string
   hasHoverEffect?: boolean
 }

@@ -8,6 +8,7 @@
         <BlogImage
           height="250px"
           :src="imageUrl"
+          :lazy-src="imageLazyUrl"
           has-hover-effect
         />
       </router-link>
@@ -153,4 +154,5 @@ const truncatedText = computed(() => truncateString(props.blog.text, 100));
 
 const avatarUrl = computed(() => getRandomImageUrl({ id: props.blog.id, dimension: [20, 20] }));
 const imageUrl = computed(() => getRandomImageUrl({ id: props.blog.id, dimension: [400, 200] }));
+const imageLazyUrl = computed(() => getRandomImageUrl({ id: props.blog.id, dimension: [4, 2] }));
 </script>

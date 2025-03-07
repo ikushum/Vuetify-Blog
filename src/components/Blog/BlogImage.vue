@@ -3,6 +3,7 @@
     <template #default="{ isHovering, props: hoverProps }">
       <v-img
         :src="props.src"
+        :lazy-src="props.lazySrc"
         :height="props.height"
         :gradient="isHovering ? imageGradientHover : imageGradient"
         cover

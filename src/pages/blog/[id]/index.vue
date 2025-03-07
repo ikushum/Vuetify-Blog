@@ -20,6 +20,7 @@
 
         <BlogImage
           :src="imageUrl || ''"
+          :lazy-src="imageLazyUrl || ''"
           height="350px"
         />
 
@@ -91,7 +92,8 @@ const isDeleteDialogOpen = ref(false);
 const blog = computed(() => blogStore.getById(route.params.id));
 const formattedDate = computed(() => blog.value && formatDate(blog.value.date));
 const avatarUrl = computed(() => blog.value && getRandomImageUrl({ id: blog.value.id, dimension: [20, 20] }));
-const imageUrl = computed(() => blog.value && getRandomImageUrl({ id: blog.value.id, dimension: [400, 200] }));
+const imageUrl = computed(() => blog.value && getRandomImageUrl({ id: blog.value.id, dimension: [600, 300] }));
+const imageLazyUrl = computed(() => blog.value && getRandomImageUrl({ id: blog.value.id, dimension: [4, 2] }));
 </script>
 
 <style scoped>
