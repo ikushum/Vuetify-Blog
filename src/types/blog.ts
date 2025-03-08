@@ -14,6 +14,10 @@ export interface BlogFormValues {
   author: string
 }
 
+export interface BlogListProps {
+  blogs: BlogPost[]
+}
+
 export interface BlogLargeCardProps {
   blog: BlogPost
 }

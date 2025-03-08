@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-16 fill-height d-flex flex-column align-center justify-center">
+  <div class="fill-height d-flex flex-column align-center justify-center py-10">
     <div class="text-h2 bg-grey-lighten-3 pa-10 mb-10 rounded-circle">
       <v-icon color="grey">
         {{ mdiFolderOutline }}
@@ -40,7 +40,7 @@
     </v-btn>
 
     <BlogGenerateDialog v-model="isGenerateBlogDialogOpen" />
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts" setup>

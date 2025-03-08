@@ -17,6 +17,7 @@ declare module 'vue' {
     BlogForm: typeof import('./components/blog/BlogForm.vue')['default']
     BlogGenerateDialog: typeof import('./components/blog/BlogGenerateDialog.vue')['default']
     BlogImage: typeof import('./components/blog/BlogImage.vue')['default']
+    BlogList: typeof import('./components/blog/BlogList.vue')['default']
     NotFound: typeof import('./components/common/NotFound.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
