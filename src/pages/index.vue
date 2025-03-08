@@ -1,7 +1,5 @@
 <template>
-  <v-container
-    v-if="blogs.length"
-  >
+  <v-container v-if="blogs.length">
     <BlogList :blogs="blogs" />
   </v-container>
 
