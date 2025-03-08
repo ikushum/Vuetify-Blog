@@ -20,7 +20,7 @@ yarn dev
 
 ## ✅ Lighthouse Score
 
-<img width="349" alt="Image" src="https://github.com/user-attachments/assets/87ade5bb-707a-43cf-ba31-56f1bce6ef51" />
+<img width="70%" src="https://github.com/user-attachments/assets/8d7ba1ba-7e26-454e-b3a8-c6f9e3fc58b3" />
 
 ## Screenshots
 
