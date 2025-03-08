@@ -22,7 +22,7 @@ yarn dev
 
 <img width="70%" src="https://github.com/user-attachments/assets/8d7ba1ba-7e26-454e-b3a8-c6f9e3fc58b3" />
 
-## Screenshots
+## 🖥️ Features
 
 ### 👉 **Generate Sample Blogs**: 
 Automatically generates a list of blogs to quickly explore other features.
