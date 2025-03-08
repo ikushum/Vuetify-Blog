@@ -8,7 +8,6 @@
         :gradient="isHovering ? imageGradientHover : imageGradient"
         cover
         v-bind="hoverProps"
-
         alt="Blog Image"
         class="rounded-lg"
       >

@@ -27,7 +27,7 @@
       >
         <v-card-text
           :class="{ 'pt-0': isSmallScreen }"
-          class="pb-0"
+          class="pb-2"
         >
           <div class="d-flex align-center">
             <v-avatar
@@ -40,11 +40,12 @@
                 alt="Author Image"
               />
             </v-avatar>
+
             <span class="font-weight-light">{{ props.blog.author }}</span>
           </div>
         </v-card-text>
 
-        <v-card-title class="text-h4">
+        <v-card-title class="text-h4 py-0">
           <router-link
             :to="`/blog/${props.blog.id}`"
             class="text-decoration-none"
